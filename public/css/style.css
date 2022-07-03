@@ -1,0 +1,45 @@
+*{
+    font-family: 'Philosopher', sans-serif;
+}
+body{
+    background-color: antiquewhite;
+}
+header,footer{
+    font-weight: 700;
+    font-size: larger;
+}
+a{
+    color: var(--bs-dark);
+}
+
+/* Category */
+.cat_link{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 300ms all;
+}
+
+.cat_link:hover{
+    transform: scale(1.1);
+}
+
+.cat_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.2);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.cat_img--large{
+    height: 220px;
+}
+
+.cat_img img{
+    width: 100%;
+    object-fit: cover;
+}

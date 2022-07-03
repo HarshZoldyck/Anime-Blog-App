@@ -1,0 +1,16 @@
+<h1 class="pb-4">Explore Latest Blogs</h1>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-5">
+    <% if(typeof blog !== 'undefined' && blog.length >0){ %>
+        <% blog.forEach(function(blog,index){ %>  
+            <a href="/blog/<%= blog._id %>" class="col text-center cat_link">
+            <div class="cat_img cat_img--large shadow">
+                <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%= blog.name %> </div>
+        </a>
+        <% }) %> 
+        <% } else { %>
+            <p>No blogs found</p>
+        <% } %> 
+</div>

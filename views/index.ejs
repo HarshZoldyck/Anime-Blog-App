@@ -1,0 +1,156 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/img/top-img.png" alt="Panda Life Blog" width="666" height="555" class="d-block mx-lg-auto img-fluid" loading="lazy"> 
+    </div>
+    <div class="col-12 col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">Share & Read all kinds of blog in here</h1>
+        <p class="lead">Welcome to Panda-life. A Blog app for Anime lovers and fellow weebs.
+            Want to tell why Naruto is overrated? or why chimera ant arc is the best arc of all time ?. Write it all here for fellow anime lovers to read and enjoy. We have blogs on all genres from the thrilling , nail biting genre of mystery to  passion igniting , battle filled shonen. Or maybe you wanna read about sweet , gentle love romance anime or futuristic genre of Mecha or maybe a nice fantasy isekai. Well fear not for you have arrived at the right place.
+             “El psy Congroo”.
+            </p>
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/explore-latest" class="btn btn-outline-light btn-dark btn-lg px-4 me-md-2" style="border: .1mm solid black;">Explore Latest Blog</a>
+            <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Explore Random Blog</a>
+        </div>
+    </div>
+    
+</div>
+
+<!-- Categories -->
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+    
+    <% if(categories != ''){ %> 
+        <% categories.forEach(function(category,index){ %>
+    <a href="/categories/<%- category.name %> " class="col text-center cat_link">
+        <div class="cat_img shadow">
+            <img src="/img/<%- category.image %> " alt="<%- category.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%- category.name %></div>
+    </a>
+    <% }) %> 
+    <% } %> 
+    
+    <a href="/categories" class="col text-center cat_link">
+        <div class="cat_img shadow">
+            <img src="/img/view-all.jpeg" alt="View all categories" loading="lazy">
+        </div>
+        <div class="pt-1">View All</div>
+    </a>
+    
+</div>
+
+
+<!-- Latest -->
+
+<section>
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Latest Blogs</h2>
+        <a href="/explore-latest" class="ms-auto">View More</a>
+    </div>
+    
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(blogger !=''){ %> 
+            <% blogger.latest.forEach(function(blog,index){ %>      
+        <a href="/blog/<%= blog._id %> " class="col text-center cat_link">
+            <div class="cat_img cat_img--large shadow">
+                <img src="/uploads/<%= blog.image %> " alt="<%= blog.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%= blog.name %></div>
+        </a>
+        <% }) %> 
+        <% } else { %> 
+            <p>No blogs found</p>
+        <% } %> 
+    </div>
+</section>
+
+<!-- Romance -->
+
+<section>
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Romance Blogs</h2>
+        <a href="/categories/Romance" class="ms-auto">View More</a>
+    </div>
+    
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof blogger.romance !== 'undefined' && blogger.romance.length > 0){ %> 
+            <% blogger.romance.forEach(function(blog,index){ %> 
+                
+        <a href="/blog/<%= blog._id %> " class="col text-center cat_link">
+            <div class="cat_img cat_img--large shadow">
+                <img src="/uploads/<%= blog.image %> " alt="<%= blog.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%= blog.name %></div>
+        </a>
+        <% }) %> 
+        <% } else { %> 
+            <p>No blogs found</p>
+        <% } %> 
+    </div>
+</section>
+
+<!-- Shonen -->
+
+<section>
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Shonen Blogs</h2>
+        <a href="/categories/Shonen" class="ms-auto">View More</a>
+    </div>
+    
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof blogger.shonen !== 'undefined' && blogger.shonen.length > 0){ %> 
+            <% blogger.shonen.forEach(function(blog,index){ %> 
+                
+        <a href="/blog/<%= blog._id %> " class="col text-center cat_link">
+            <div class="cat_img cat_img--large shadow">
+                <img src="/uploads/<%= blog.image %> " alt="<%= blog.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%= blog.name %></div>
+        </a>
+        <% }) %> 
+        <% } else { %> 
+            <p>No blogs found</p>
+        <% } %> 
+    </div>
+</section>
+
+
+<!-- Isekai -->
+
+<section>
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Isekai Blogs</h2>
+        <a href="/categories/Isekai" class="ms-auto">View More</a>
+    </div>
+    
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(typeof blogger.isekai !== 'undefined' && blogger.isekai.length > 0){ %> 
+            <% blogger.isekai.forEach(function(blog,index){ %> 
+                
+        <a href="/blog/<%= blog._id %> " class="col text-center cat_link">
+            <div class="cat_img cat_img--large shadow">
+                <img src="/uploads/<%= blog.image %> " alt="<%= blog.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%= blog.name %></div>
+        </a>
+        <% }) %> 
+        <% } else { %> 
+            <p>No blogs found</p>
+        <% } %> 
+    </div>
+</section>
+
+<!-- Submit blog -->
+
+<section class="px-4 py-5 my-5 text-center">
+    <img src="/img/post-blog.jpg" alt="Post Your Blog" class="d-block mx-auto mb-4 img-fluid" width="500" height="200" loading="lazy">
+    <h2 class="display-5 fw-bold">Post your blog here NOW</h2>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Post your own blog here in front of thousands of students.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/submit-blog" class="btn btn-outline-light btn-dark btn-lg px-4 me-md-2" style="border: .1mm solid black;">Submit Blog</a>
+        </div>
+    </div>
+</section>
